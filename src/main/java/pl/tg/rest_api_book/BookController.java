@@ -16,12 +16,6 @@ public class BookController {
         this.bookService = bookService;
     }
 
-    @RequestMapping("helloBook")
-    public Book helloBook() {
-        return new Book(1L, "1234567891011", "Thinking in Java",
-                "Bruce Eckel", "Helion", "programming");
-    }
-
     @GetMapping("")
     public List<Book> getList() {
         return bookService.getBooks();
@@ -38,17 +32,17 @@ public class BookController {
     }
 
     @PostMapping("")
-    public void addBook(@RequestBody Book book){
+    public void addBook(@RequestBody Book book) {
         bookService.add(book);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteBook(@PathVariable Long id){
+    public void deleteBook(@PathVariable Long id) {
         bookService.delete(id);
     }
 
     @PutMapping("")
-    public void updateBook(@RequestBody Book book){
+    public void updateBook(@RequestBody Book book) {
         bookService.update(book);
     }
 }
