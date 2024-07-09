@@ -27,6 +27,7 @@ public class BookController {
         return bookService.getBooks();
     }
 
+
     @GetMapping("/{id}")
     public Book getBook(@PathVariable Long id) {
         return bookService.get(id).orElseThrow(() -> {
@@ -34,5 +35,10 @@ public class BookController {
                     HttpStatus.NOT_FOUND, "entity not found"
             );
         });
+    }
+
+    @PostMapping("")
+    public void addBook(@RequestBody Book book){
+        bookService.add(book);
     }
 }

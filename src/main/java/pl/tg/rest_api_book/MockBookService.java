@@ -14,6 +14,7 @@ import java.util.Optional;
 @Setter
 public class MockBookService implements BookService {
     private List<Book> books;
+    private static Long nextId = 4L;
 
     public MockBookService() {
         books = new ArrayList<>();
@@ -27,6 +28,7 @@ public class MockBookService implements BookService {
         return books;
     }
 
+
     @Override
     public Optional<Book> get(Long id) {
         return books.stream()
@@ -36,7 +38,9 @@ public class MockBookService implements BookService {
 
     @Override
     public void add(Book book) {
-
+        book.setId(nextId);
+        nextId++;
+        books.add(book);
     }
 
     @Override
