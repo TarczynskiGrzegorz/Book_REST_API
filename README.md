@@ -1,6 +1,6 @@
 # Users CRUD 
 ## Description
-REST API enabling connection with server by provided end-points.
+REST API enabling connection with server by provided endpoints.
 
 ## Features
 | Method HTTP  | ADRESS | DESCRIPTION |
