@@ -1,4 +1,4 @@
-# Users CRUD 
+# REST API
 ## Description
 REST API enabling connection with server by provided endpoints.
 
